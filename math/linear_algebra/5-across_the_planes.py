@@ -13,6 +13,9 @@ def add_matrices2D(mat1, mat2):
     return: - if dim(mat1) == dim(mat2) returns new matrix
             - if dim(mat1) != dim(mat2) returns None
     """
+    if len(mat1) == 0:
+        return None
+
     if len(mat1) != len(mat2) or\
             len(mat2[0]) != len(mat1[0]):
         return None
