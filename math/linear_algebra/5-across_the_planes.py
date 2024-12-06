@@ -17,10 +17,10 @@ def add_matrices2D(mat1, mat2):
         return None
 
     if len(mat1)== 0 or len(mat2) == 0:
-        return None
+        return []
     
     if not mat1[0] or not mat2[0]:
-        return
+        return []
 
     if len(mat1) != len(mat2) or\
             len(mat2[0]) != len(mat1[0]):
