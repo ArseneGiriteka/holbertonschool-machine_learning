@@ -14,7 +14,7 @@ def add_matrices2D(mat1, mat2):
             - if dim(mat1) != dim(mat2) returns None
     """
     if len(mat1) != len(mat2) or\
-            len(column(mat2, 0)) != len(column(mat1, 0)):
+            len(mat2[0]) != len(mat1[0]):
         return None
 
     sum = []
@@ -40,5 +40,7 @@ def sum_row(mat1, mat2, index):
     mat2_row = mat2[index]
     row_sum = []
 
-    for i in range(mat1):
+    for i in range(len(mat1)):
         row_sum += [mat1_row[i] + mat2_row[i]]
+
+    return row_sum
