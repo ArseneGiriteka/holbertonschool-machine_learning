@@ -15,7 +15,7 @@ def matrix_transpose(matrix):
 
     for i in range(len(matrix_copy[0])):
         transpose += [column(matrix_copy, i)]
-    
+
     return transpose
 
 
