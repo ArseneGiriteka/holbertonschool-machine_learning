@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
+"""This module contains a function that draws
+plot whos x axis has a logalithmic scale"""
 import numpy as np
 import matplotlib.pyplot as plt
 
 
 def change_scale():
+    """This function draws a plot whos x axis
+    has a logalithmic scale"""
     x = np.arange(0, 28651, 5730)
     r = np.log(0.5)
     t = 5730
