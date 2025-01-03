@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""This module contains a function that drows a plot
+"""This module contains a function that draws a plot
 as a histogram"""
 import numpy as np
 import matplotlib.pyplot as plt
@@ -15,7 +15,7 @@ def frequency():
     plt.xlabel("Grades")
     plt.ylabel("Number of Students")
     plt.title("Project A")
-
+    plt.xlim(0, 100)
     plt.hist(student_grades, bins=range(0, 110, 10), edgecolor="black")
 
     plt.show()
