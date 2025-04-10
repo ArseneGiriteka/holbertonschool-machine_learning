@@ -17,12 +17,11 @@ def change_scale():
     y = np.exp((r / t) * x)
     plt.figure(figsize=(6.4, 4.8))
 
-    plt.plot(x, y, "b-")
+    plt.plot(x, y, "-")
     plt.xlim(0, 28650)
     plt.yscale("log")
     plt.xlabel("Time (years)")
     plt.ylabel("Fraction Remaining")
     plt.title("Exponential Decay of C-14")
-
 
     plt.show()
