@@ -36,13 +36,16 @@ def all_in_one():
     ax1 = plt.subplot(3, 2, 1)
     ax1.plot(y0, color='red', linestyle='-')
     ax1.set_title(label="", fontsize="x-small")
-    ax1.set_xlim(0, 10)
+    ax1.set_xticks(range(0, 11, 2))
+    ax1.set_yticks(range(0, 1001, 500))
 
     ax2 = plt.subplot(3, 2, 2)
     ax2.scatter(x1, y1, color='magenta', s=10)
     ax2.set_title("Men's Height vs Weight", fontsize="x-small")
     ax2.set_xlabel("Height (in)", fontsize="x-small")
     ax2.set_ylabel("Weight (lbs)", fontsize="x-small")
+    ax2.set_yticks(range(0, 200, 20))
+    ax2.set_ylim(166, 200)
 
     ax3 = plt.subplot(3, 2, 3)
     ax3.plot(x2, y2)
