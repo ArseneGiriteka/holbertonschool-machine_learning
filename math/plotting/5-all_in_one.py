@@ -50,6 +50,9 @@ def all_in_one():
     ax3.set_title("Exponential Decay of C-14", fontsize="x-small")
     ax3.set_xlabel("Time (years)", fontsize="x-small")
     ax3.set_ylabel("Fraction Remaining", fontsize="x-small")
+    ax3.set_xlim(0, 28650)
+    ax3.set_xticks(range(0, 30000, 10000))
+    ax3.set_ylim(0, 1)
 
     ax4 = plt.subplot(3, 2, 4)
     ax4.plot(x3, y31, linestyle='dashed', label='C-14')
@@ -58,6 +61,10 @@ def all_in_one():
     ax4.set_title("Exponential Decay Comparison", fontsize="x-small")
     ax4.set_xlabel("Time (years)", fontsize="x-small")
     ax4.set_ylabel("Fraction Remaining", fontsize="x-small")
+    ax4.set_xlim(0, 20000)
+    ax4.set_ylim(0, 1)
+    ax4.set_yticks([i/10 for i in range(0, 11, 5)])
+    ax4.set_xticks(range(0, 20001, 5000))
 
     ax5 = plt.subplot(3, 2, (5, 6))
     ax5.hist(student_grades, bins=range(0, 110, 10), edgecolor="black")
