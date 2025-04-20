@@ -68,20 +68,20 @@ class Node:
         return (new_text)
 
     def update_bounds_below(self):
+        """Update"""
         if self.is_root:
             self.upper = {self.feature: np.inf}
             self.lower = {self.feature: -np.inf}
-        if not hasattr(self, 'lower'):
-            self.lower = {}
-        if not hasattr(self, 'upper'):
-            self.upper = {}
 
         for child in [self.left_child, self.right_child]:
-            child.lower = dict(self.lower)
-            child.upper = dict(self.upper)
+            child.lower = self.lower.copy()
+            child.upper = self.upper.copy()
+
             if child == self.left_child:
+                # Left child => restrict upper bound for current feature
                 child.upper[self.feature] = self.threshold
             else:
+                # Right child => restrict lower bound for current feature
                 child.lower[self.feature] = self.threshold
 
         for child in [self.left_child, self.right_child]:
