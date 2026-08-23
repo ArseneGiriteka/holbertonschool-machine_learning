@@ -203,6 +203,7 @@ class Decision_Tree():
         return self.root.pred(x)
 
     def update_predict(self):
+        """This method will update the predict function of this tree"""
         self.update_bounds()
         leaves = self.get_leaves()
         for leaf in leaves:
