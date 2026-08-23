@@ -70,19 +70,20 @@ class Node:
     def update_bounds_below(self):
         """Update"""
         if self.is_root:
-            self.upper = {self.feature: np.inf}
-            self.lower = {self.feature: -np.inf}
+            self.upper = {0: np.inf}
+            self.lower = {0: -1 * np.inf}
 
         for child in [self.left_child, self.right_child]:
             child.lower = self.lower.copy()
             child.upper = self.upper.copy()
 
-            if child == self.left_child:
-                # Left child => restrict upper bound for current feature
-                child.upper[self.feature] = self.threshold
+        for child, is_left in [(self.left_child, True), (self.right_child, False)]:
+            if is_left:
+                child.lower[self.feature] = max(
+                    child.lower.get(self.feature, -np.inf), self.threshold)
             else:
-                # Right child => restrict lower bound for current feature
-                child.lower[self.feature] = self.threshold
+                child.upper[self.feature] = min(
+                    child.upper.get(self.feature, np.inf), self.threshold)
 
         for child in [self.left_child, self.right_child]:
             child.update_bounds_below()
