@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-import numpy as np
-from scipy import stats
 """
 This module contains the Random_Forest class, an ensemble of
 randomly-split Decision_Tree objects that vote on predictions.
 """
+import numpy as np
+from scipy import stats
+
 Decision_Tree = __import__('8-build_decision_tree').Decision_Tree
 
 
