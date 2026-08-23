@@ -77,7 +77,8 @@ class Node:
             child.lower = self.lower.copy()
             child.upper = self.upper.copy()
 
-        for child, is_left in [(self.left_child, True), (self.right_child, False)]:
+        for child, is_left\
+                in [(self.left_child, True), (self.right_child, False)]:
             if is_left:
                 child.lower[self.feature] = max(
                     child.lower.get(self.feature, -np.inf), self.threshold)
