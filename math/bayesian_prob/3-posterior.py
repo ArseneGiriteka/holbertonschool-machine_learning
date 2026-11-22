@@ -40,5 +40,5 @@ def posterior(x, n, P, Pr):
     for i in range(1, min(x, n - x) + 1):
         comb = comb * (n - i + 1) // i
 
-    inter = comb * (P ** x) * ((1 - P) ** (n - x)) * Pr
+    inter = float(comb) * (P ** x) * ((1 - P) ** (n - x)) * Pr
     return inter / np.sum(inter)
