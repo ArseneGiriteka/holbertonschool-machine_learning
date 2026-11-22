@@ -39,4 +39,4 @@ def intersection(x, n, P, Pr):
     for i in range(1, min(x, n - x) + 1):
         comb = comb * (n - i + 1) // i
 
-    return comb * (P ** x) * ((1 - P) ** (n - x)) * Pr
+    return float(comb) * (P ** x) * ((1 - P) ** (n - x)) * Pr
